@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      animation: slideDown 1s ease-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0.85;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 30px;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Java Developer | Microservices | Cloud Enthusiast</p>
+  </header>
+
+  <section class="projects">
+    <div class="project-card">
+      <h3>AI Search Engine</h3>
+      <p>Powered by Spring Boot & GATE JAPE for NLP. Deployed on Google Cloud. Integrated with React for dynamic UI.</p>
+    </div>
+    <div class="project-card">
+      <h3>Payment Gateway Integration</h3>
+      <p>Developed secure payment processing using Java and Spring MVC. Real-time monitoring reduced errors by 15%.</p>
+    </div>
+    <div class="project-card">
+      <h3>Blog Engine</h3>
+      <p>Implemented CRUD operations with Spring Boot, RESTful APIs, and MySQL. Supports user comments and auth.</p>
+    </div>
+  </section>
+</body>
+</html>
