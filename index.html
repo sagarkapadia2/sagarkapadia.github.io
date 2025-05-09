@@ -2,123 +2,179 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Software Developer Portfolio</title>
   <style>
+    :root {
+      --bg: #0f172a;
+      --primary: #38bdf8;
+      --card-bg: #1e293b;
+      --text-light: #cbd5e1;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding: 40px 20px;
-      animation: fadeIn 1s ease-out;
+      background: var(--bg);
+      color: #fff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
       text-align: center;
-      margin-bottom: 40px;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #1e293b, #334155);
+      animation: fadeIn 1.5s ease-in-out;
     }
 
-    h1 {
+    header h1 {
       font-size: 3rem;
-      animation: slideDown 1s ease-out;
     }
 
-    p {
+    header p {
+      color: var(--text-light);
       font-size: 1.2rem;
-      margin-top: 10px;
-      opacity: 0.85;
+      margin-top: 0.5rem;
     }
 
-    .projects {
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #1e293b;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      padding: 3rem 2rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 1rem;
+    }
+
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      width: 100%;
-      max-width: 1000px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
 
-    .project-card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
+    .card {
+      background: var(--card-bg);
       border-radius: 12px;
-      backdrop-filter: blur(8px);
-      transition: transform 0.3s, box-shadow 0.3s;
-      animation: fadeInUp 0.8s ease forwards;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+      animation: slideUp 0.8s ease forwards;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    .card:hover {
+      transform: translateY(-10px);
+      background: #334155;
     }
 
-    h3 {
-      margin-bottom: 10px;
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-light);
+      border-top: 1px solid #334155;
+      background: #1e293b;
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.98);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes slideDown {
-      from {
-        transform: translateY(-30px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeInUp {
-      from {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Your Name</h1>
-    <p>Java Developer | Microservices | Cloud Enthusiast</p>
+    <h1>Sagar Kapadia</h1>
+    <p>Software Developer | Java | Spring Boot | React</p>
   </header>
 
-  <section class="projects">
-    <div class="project-card">
-      <h3>AI Search Engine</h3>
-      <p>Powered by Spring Boot & GATE JAPE for NLP. Deployed on Google Cloud. Integrated with React for dynamic UI.</p>
-    </div>
-    <div class="project-card">
-      <h3>Payment Gateway Integration</h3>
-      <p>Developed secure payment processing using Java and Spring MVC. Real-time monitoring reduced errors by 15%.</p>
-    </div>
-    <div class="project-card">
-      <h3>Blog Engine</h3>
-      <p>Implemented CRUD operations with Spring Boot, RESTful APIs, and MySQL. Supports user comments and auth.</p>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+  </nav>
+
+  <section id="projects">
+    <h2>🧪 Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>AI Search Engine</h3>
+        <p>Built a RESTful backend using Spring Boot, integrated with React and deployed on Google Cloud with NLP-driven filtering using GATE JAPE grammar.</p>
+      </div>
+      <div class="card">
+        <h3>E-commerce Platform</h3>
+        <p>Developed secure, scalable backend APIs using Spring MVC and MySQL, integrated with payment gateways, and improved user conversion by 20%.</p>
+      </div>
+      <div class="card">
+        <h3>DevOps CI/CD Setup</h3>
+        <p>Set up automated pipelines using AWS CodePipeline and Google Cloud Build for reliable microservice deployments.</p>
+      </div>
     </div>
   </section>
+
+  <section id="certificates">
+    <h2>🎓 Certificates</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Oracle Certified Java Programmer</h3>
+        <p>Validated strong foundation in Java 8 programming and object-oriented concepts.</p>
+      </div>
+      <div class="card">
+        <h3>AWS Certified Developer – Associate</h3>
+        <p>Certified expertise in deploying and debugging cloud-based apps using AWS SDKs and CLI.</p>
+      </div>
+      <div class="card">
+        <h3>Spring Professional Certification</h3>
+        <p>Demonstrated advanced knowledge of Spring Core, Boot, Data, and Security modules.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Sagar Kapadia
+  </footer>
 </body>
 </html>
